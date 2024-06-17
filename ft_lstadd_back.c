@@ -6,15 +6,16 @@
 /*   By: fmaurer <fmaurer42@posteo.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 19:58:57 by fmaurer           #+#    #+#             */
-/*   Updated: 2024/06/17 17:48:26 by fmaurer          ###   ########.fr       */
+/*   Updated: 2024/06/17 18:32:30 by fmaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // 2nd if: empty list given as NULL
-// always ensuring that newend->next == NULL
-// ...francinette did not like it.. but moulinette does. so i keep it.
+// "always ensuring that newend->next == NULL"
+// ...francinette does not like it. but it actually makes sense to me. still i
+// will remove it. maybe it is better not to touch newend...
 void	ft_lstadd_back(t_list **head, t_list *newend)
 {
 	t_list	*oldlast;
@@ -24,10 +25,8 @@ void	ft_lstadd_back(t_list **head, t_list *newend)
 	if (!*head)
 	{
 		*head = newend;
-		newend->next = NULL;
 		return ;
 	}
 	oldlast = ft_lstlast(*head);
 	oldlast->next = newend;
-	newend->next = NULL;
 }
