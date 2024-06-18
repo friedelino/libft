@@ -6,7 +6,7 @@
 /*   By: fmaurer <fmaurer42@posteo.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:39 by fmaurer           #+#    #+#             */
-/*   Updated: 2024/06/17 13:30:29 by fmaurer          ###   ########.fr       */
+/*   Updated: 2024/06/18 08:24:03 by fmaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsiz)
 	size_t	k;
 	size_t	dlen;
 
-	if (dsiz <= ft_strlen(dst))
+	if (dsiz < ft_strlen(dst))
 		return (ft_strlen(src) + dsiz);
 	dlen = ft_strlen(dst);
 	k = 0;
