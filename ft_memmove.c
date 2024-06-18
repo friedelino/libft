@@ -6,7 +6,7 @@
 /*   By: fmaurer <fmaurer42@posteo.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:37:55 by fmaurer           #+#    #+#             */
-/*   Updated: 2024/06/18 09:08:47 by fmaurer          ###   ########.fr       */
+/*   Updated: 2024/06/18 09:11:30 by fmaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*ds;
 	char	*sr;
 
+	if (!n)
+		return (dest);
 	ds = (char *) dest;
 	sr = (char *) src;
 	if (src < dest)
