@@ -6,7 +6,7 @@
 /*   By: fmaurer <fmaurer42@posteo.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:38:39 by fmaurer           #+#    #+#             */
-/*   Updated: 2024/06/18 08:24:03 by fmaurer          ###   ########.fr       */
+/*   Updated: 2024/06/18 08:29:53 by fmaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,17 @@
 // ...
 // if	(strlcat(pname,	file, sizeof(pname)) >=	sizeof(pname))
 // 	goto toolong;
+//
+// 1st try error: in
+// 		if (dsiz <= ft_strlen(dst))
+// i had a '<' so the return value would be wrong
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dsiz)
 {
 	size_t	k;
 	size_t	dlen;
 
-	if (dsiz < ft_strlen(dst))
+	if (dsiz <= ft_strlen(dst))
 		return (ft_strlen(src) + dsiz);
 	dlen = ft_strlen(dst);
 	k = 0;
