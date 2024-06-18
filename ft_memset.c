@@ -6,14 +6,14 @@
 /*   By: fmaurer <fmaurer42@posteo.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 10:29:27 by fmaurer           #+#    #+#             */
-/*   Updated: 2024/06/10 09:20:15 by fmaurer          ###   ########.fr       */
+/*   Updated: 2024/06/18 08:57:35 by fmaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO: does it have to unsigned char ?!?! RTFM!
-// T
 #include "libft.h"
 
+// 1stry libft-unit-test complained about not segfaulting with NULL-param. so i
+// removed the check for it
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
@@ -21,8 +21,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	byte_s = (char *) s;
 	i = 0;
-	if (s == NULL)
-		return (NULL);
 	while (i < n)
 	{
 		byte_s[i] = c;
