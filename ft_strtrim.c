@@ -6,7 +6,7 @@
 /*   By: fmaurer <fmaurer42@posteo.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 16:29:04 by fmaurer           #+#    #+#             */
-/*   Updated: 2024/06/14 17:19:51 by fmaurer          ###   ########.fr       */
+/*   Updated: 2024/06/18 09:17:21 by fmaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ char	*ft_strtrim(char const *s, char const *set)
 	if (end == 0 && start == ft_strlen(s))
 		return (ft_strdup(""));
 	tri = (char *)malloc(sizeof(char) * (end - start + 2));
-	ft_bzero(tri, end - start + 2);
 	if (!tri)
 		return (NULL);
+	ft_bzero(tri, end - start + 2);
 	i = -1;
 	while (++i <= end - start)
 		tri[i] = s[start + i];

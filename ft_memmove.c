@@ -6,7 +6,7 @@
 /*   By: fmaurer <fmaurer42@posteo.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:37:55 by fmaurer           #+#    #+#             */
-/*   Updated: 2024/06/18 09:11:30 by fmaurer          ###   ########.fr       */
+/*   Updated: 2024/06/18 09:14:57 by fmaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@
 // dest[3], 2) 3 -> dest[2] which equals src[3] overwriting this, which is not a
 // problem because it already got copied.
 //
-// remove *ALL* NULL check because of franci
+// remove *ALL* NULL check because of franci ***EXCEPT*** the one where both
+// params == NULL
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*ds;
 	char	*sr;
 
-	if (!n)
-		return (dest);
+	if (!dest && !src)
+		return (NULL);
 	ds = (char *) dest;
 	sr = (char *) src;
 	if (src < dest)
